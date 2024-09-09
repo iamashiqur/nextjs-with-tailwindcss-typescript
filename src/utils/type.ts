@@ -1,12 +1,12 @@
-export type INavDropdown = {
+export interface INavDropdown {
   id: number;
   name: string;
   path: string;
-};
+}
 
-export type IHeaderNavItems = {
+export interface IHeaderNavItems {
   id: number;
   name: string;
   path: string;
   dropdown: INavDropdown[];
-};
+}
