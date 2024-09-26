@@ -1,4 +1,4 @@
-import { IHeaderNavItems } from './type'
+import { IHeaderNavItems } from '@/type'
 
 export const headerNavItems: IHeaderNavItems[] = [
   {
