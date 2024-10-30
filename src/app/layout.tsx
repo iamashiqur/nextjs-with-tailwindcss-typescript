@@ -1,9 +1,24 @@
 import ClientProvider from '@/components/ClientProvider'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Public_Sans, Sora } from 'next/font/google'
 import './style.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const publicsans = Public_Sans({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
+})
+
+const sora = Sora({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800'],
+  variable: '--font-sora'
+})
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  variable: '--font-inter'
+})
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -13,7 +28,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body
+        className={`${publicsans.className} ${sora.variable} ${inter.variable}`}
+        suppressHydrationWarning={true}
+      >
         <ClientProvider>{children}</ClientProvider>
       </body>
     </html>
