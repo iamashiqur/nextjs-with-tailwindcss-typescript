@@ -5,6 +5,10 @@
 First, run the development server:
 
 ```bash
+git clone https://github.com/iamashiqur/nextjs-with-tailwindcss-typescript.git
+# then
+git checkout <version>
+#
 npm install
 # then
 npm run dev
