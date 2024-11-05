@@ -1,10 +1,10 @@
-export interface INavDropdown {
+export type INavDropdown = {
   id: number
   name: string
   path: string
 }
 
-export interface IHeaderNavItems {
+export type IHeaderNavItems = {
   id: number
   name: string
   path: string
