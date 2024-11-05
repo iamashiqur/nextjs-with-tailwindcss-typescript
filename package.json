@@ -4,13 +4,19 @@
   "author": "Ashiqur Rahman - iamashiqur",
   "description": "iamashiqur.vercel.app",
   "private": true,
+  "lint-staged": {
+    "src/**/*.{ts,tsx,js,jsx}": "npm run lint-prettier"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
     "check-types": "tsc --noEmit --pretty",
+    "lint": "next lint",
+    "lint:check": "eslint --ignore-path .eslintignore --ext .js,.jsx,.ts,.tsx .",
+    "prettier:check": "prettier --ignore-path .gitignore --check \"**/*.+(js|jsx|ts|tsx|json)\"",
+    "prettier:fix": "prettier --ignore-path .gitignore --write \"**/*.+(js|jsx|ts|tsx|json)\"",
+    "lint-prettier": "npm run lint:check && npm run prettier:fix",
     "prepare": "husky"
   },
   "dependencies": {
