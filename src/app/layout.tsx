@@ -1,4 +1,4 @@
-import ClientProvider from '@/components/ClientProvider'
+import ReduxProvider from '@/reduxprovider/ReduxProvider'
 import type { Metadata } from 'next'
 import { Inter, Public_Sans, Sora } from 'next/font/google'
 import './style.css'
@@ -32,7 +32,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         className={`${publicsans.className} ${sora.variable} ${inter.variable}`}
         suppressHydrationWarning={true}
       >
-        <ClientProvider>{children}</ClientProvider>
+        <ReduxProvider>{children}</ReduxProvider>
       </body>
     </html>
   )
