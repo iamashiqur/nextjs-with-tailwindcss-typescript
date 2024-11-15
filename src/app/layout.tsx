@@ -1,23 +1,27 @@
 import ReduxProvider from '@/reduxprovider/ReduxProvider'
 import type { Metadata } from 'next'
-import { Inter, Public_Sans, Sora } from 'next/font/google'
+import localFont from 'next/font/local'
 import './style.css'
 
-const publicsans = Public_Sans({
-  subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
-})
+const aeonikpro = localFont({
+  src: [
+    {
+      path: '../../public/fonts/AeonikPro-Regular.woff2',
+      weight: '400',
+      style: 'normal'
+    },
 
-const sora = Sora({
-  subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800'],
-  variable: '--font-sora'
-})
-
-const inter = Inter({
-  subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-  variable: '--font-inter'
+    {
+      path: '../../public/fonts/AeonikPro-Light.woff2',
+      weight: '300',
+      style: 'normal'
+    },
+    {
+      path: '../../public/fonts/AeonikPro-Bold.woff2',
+      weight: '700',
+      style: 'normal'
+    }
+  ]
 })
 
 export const metadata: Metadata = {
@@ -28,10 +32,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body
-        className={`${publicsans.className} ${sora.variable} ${inter.variable}`}
-        suppressHydrationWarning={true}
-      >
+      <body className={aeonikpro.className} suppressHydrationWarning={true}>
         <ReduxProvider>{children}</ReduxProvider>
       </body>
     </html>
